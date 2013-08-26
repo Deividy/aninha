@@ -1,0 +1,67 @@
+!!! 5
+html
+    head
+        title Aninha sisteminha
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(charset='UTF-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+        link(href="/lib/bootstrap-3.0.0/css/pygments-manni.css", rel="stylesheet", media="screen")
+        link(href="/lib/bootstrap-3.0.0/css/bootstrap.min.css", rel="stylesheet", media="screen")
+        link(href="/lib/bootstrap-3.0.0/css/bootstrap-theme.min.css", rel="stylesheet", media="screen")
+        link(href="/styles/styles.css", rel="stylesheet", media="screen")
+
+        script(type='text/javascript', src='/lib/jquery-1.10.2.min.js')
+        script(type='text/javascript', src='/lib/underscore-min.js')
+        script(type='text/javascript', src='/lib/backbone-min.js')
+        script(type='text/javascript', src='/lib/bootstrap-3.0.0/js/bootstrap.min.js')
+        script(type='text/javascript', src='/scripts/form.js')
+        script(type='text/javascript', src='/scripts/app.js')
+
+    body
+        header.navbar.navbar-inverse.navbar-fixed-top
+
+            .navbar-header
+                a.navbar-brand(href='#') Sisteminha da aninha!
+            .collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li.active
+                        a.home Clientes
+                    li
+                        a.historico Historico
+                    li
+                        a.relatorios Relatorios
+
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a.logout Sair
+
+
+        main.content.row-fluid.content-main.container
+            h1 Cadastro de clientes
+
+            form.form-client.form-horizontal#clientForm
+                .form-fields
+                .fichas
+                    .corporal
+                        h3 Ficha Corporal
+                        .content
+
+                    .depilacao
+                        h3 Ficha Depilacao
+                        .content
+
+                    .limpeza
+                        h3 Ficha Limpeza
+                        .content
+
+                .form-group
+                    .col-lg-offset-2.col-lg-10
+                        button.btn.btn-danger Cancelar
+                        &nbsp; &nbsp;
+                        button.btn.btn-success Cadastrar
+
+        #footer
+
+        include templates.html
+

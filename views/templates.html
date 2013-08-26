@@ -1,0 +1,46 @@
+<script type='text/template' id='tpl-formField'>
+</script>
+<script type='text/template' id='subtpl-formField-input'>
+    <div class='form-group'>
+        <label class='col-lg-3 control-label'><%= label %></label>
+        <dov class='col-lg-9'>
+            <input type='<%= type %>' class='form-control' name='<%= name %>' placeholder='<%= label %>' />
+        </div>
+    </div>
+</script>
+<script type='text/template' id='subtpl-formField-textarea'>
+    <div class='form-group'>
+        <label class='col-lg-3 control-label'><%= label %></label>
+        <div class='col-lg-9'>
+            <textarea class='form-control' name='<%= name %>' placeholder='<%= label %>'> </textarea>
+        </div>
+    </div>
+</script>
+
+<script type='text/template' id='subtpl-formField-options'>
+    <%
+        // Oh yeah, i know how ugly it is, but...
+        var size = options.length > 2 ? [ 8, 2 ] : [ 3, 6 ];
+    %>
+    <div class="form-group">
+        <label class='col-lg-3 control-label'><%= label %></label>
+        <div class='col-lg-<%= size[0] %>'>
+            <div class="btn-group" data-toggle="buttons">
+                <% 
+                    for (var i = 0; i < options.length; i++) {
+                        var o = options[i];
+                %>
+                    <label class="btn btn-<%= o.btnClass || 'primary' %>">
+                        <input type="<%= type %>" name="<%= name %>" id="option<%= i %>" value="<%= o.label %>"> <%= o.label %>
+                    </label>
+                <% } %>
+            </div>
+        </div>
+        <% if (hasDesc) { %>
+            <dov class='col-lg-<%= size[1] %>'>
+                <input type='text' class='form-control' name='<%= name %>Desc' placeholder='<%= descLabel %>' />
+            </div>           
+        <% } %>
+
+    </div>
+</script>
